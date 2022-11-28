@@ -1,5 +1,7 @@
 package de.neuefische;
 
+import de.neuefische.model.Car;
+
 public class Main {
     public static void main(String[] args) {
         Car bmw = new Car("BMW", 2015, "Sedan", "Schwarz", "3er");

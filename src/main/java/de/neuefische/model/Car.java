@@ -1,7 +1,7 @@
-package de.neuefische;
+package de.neuefische.model;
 
 public class Car {
-    static double SMALLEST_ENGINE = 2.4;
+    public static double SMALLEST_ENGINE = 2.4;
 
     private String brand;
     private int year;
@@ -57,15 +57,15 @@ public class Car {
         this.model = model;
     }
 
-    String describeMe() {
+    public String describeMe() {
         return brand + " " + model;
     }
 
-    boolean containsBrand () {
+    private boolean containsBrand () {
         return brand.length() > 0;
     }
 
-    void changeSmallestEngine(double newEngine) {
+    public void changeSmallestEngine(double newEngine) {
         Car.SMALLEST_ENGINE = newEngine;
     }
 }
