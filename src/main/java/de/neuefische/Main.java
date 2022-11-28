@@ -5,21 +5,13 @@ import de.neuefische.model.Car;
 public class Main {
     public static void main(String[] args) {
         Car bmw = new Car("BMW", 2015, "Sedan", "Schwarz", "3er");
+        Car bmw2 = new Car("BMW", 2015, "Sedan", "Schwarz", "3er");
         Car audi = new Car("Audi", 2019, "Coupe", "Silver", "A3");
 
-        audi.changeSmallestEngine(3.0);
-        bmw.changeSmallestEngine(3.4);
-        Car.SMALLEST_ENGINE = 4.0;
+        System.out.println(bmw);
+        System.out.println(audi);
 
-        String bmwDescription = bmw.describeMe();
-        String audiDescription = audi.describeMe();
-
-        System.out.println(bmwDescription);
-        System.out.println(audiDescription);
-
-        System.out.println("Smallest Engine " + Car.SMALLEST_ENGINE);
-
-        System.out.println("Baujahr: " + bmw.getYear());
+        System.out.println(bmw.equals(bmw2));
     }
 
     public static int add(int a, int b) {

@@ -1,8 +1,8 @@
 package de.neuefische.model;
 
-public class Car {
-    public static double SMALLEST_ENGINE = 2.4;
+import java.util.Objects;
 
+public class Car {
     private String brand;
     private int year;
     private String type;
@@ -61,11 +61,26 @@ public class Car {
         return brand + " " + model;
     }
 
-    private boolean containsBrand () {
-        return brand.length() > 0;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return year == car.year && Objects.equals(brand, car.brand) && Objects.equals(type, car.type) && Objects.equals(color, car.color) && Objects.equals(model, car.model);
     }
 
-    public void changeSmallestEngine(double newEngine) {
-        Car.SMALLEST_ENGINE = newEngine;
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, year, type, color, model);
+    }
+
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", year=" + year +
+                ", type='" + type + '\'' +
+                ", color='" + color + '\'' +
+                ", model='" + model + '\'' +
+                '}';
     }
 }
